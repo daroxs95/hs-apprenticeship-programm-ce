@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { ApplicationSummary } from "@/modules/scholarships/application/components/ApplicationSummary";
 import { ApplicationAbout } from "@/modules/scholarships/application/components/ApplicationAbout";
+import { ApplicationSpecs } from "@/modules/scholarships/application/components/ApplicationSpecs";
 
 export async function generateStaticParams() {
   const posts = await ScholarshipService.list();
@@ -91,6 +92,32 @@ export default async function ScholarshipPage({ params }: Props) {
           about={scholarship.scholarship.about?.[0].data}
           title="About the apprenticeship"
           imageUrl={scholarship.scholarship.program.photos?.[0].src}
+        />
+      </section>
+      <section>
+        <ApplicationSpecs
+          study={{
+            hours: scholarship.scholarship.study_commitment,
+            commitment: scholarship.scholarship.study_commitment_text,
+          }}
+          work={{
+            hours: scholarship.scholarship.work_commitment,
+            commitment:
+              "Immerse yourself in the professional world during your apprenticeship. You’ll learn the ropes from the best and get to apply your newly acquired knowledge in the field from day one.",
+          }}
+          internship={{
+            hours: scholarship.scholarship.internship_commitment,
+            commitment: scholarship.scholarship.internship_commitment_text,
+          }}
+          value={{
+            total: scholarship.scholarship.total_value,
+            tuitionCovered: scholarship.scholarship.tuition,
+            remaining: scholarship.scholarship.remaining,
+          }}
+          stipend={{
+            monthly: scholarship.scholarship.stipend_per_month,
+            yearly: scholarship.scholarship.stipend_per_year,
+          }}
         />
       </section>
     </main>

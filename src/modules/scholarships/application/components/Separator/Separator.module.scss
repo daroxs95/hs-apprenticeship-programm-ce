@@ -1,0 +1,13 @@
+@import "../../../../../styles/mixins.scss";
+
+.separator {
+  border-width: 1px;
+  border-color: var(--color-border);
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 10px;
+  padding: var(--app-s-space) 0 0 0;
+  margin-bottom: var(--app-s-space);
+}
