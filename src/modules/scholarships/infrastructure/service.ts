@@ -1,19 +1,29 @@
 import { endpoints } from "@/config";
 import { Scholarship, ScholarshipSummary } from "../domain/types";
 
-async function listScholarships() {
-  return fetch(endpoints.api.apprenticeship).then(
-    (res) => res.json() as Promise<ScholarshipSummary[]>
-  );
+async function listScholarships(init?: RequestInit) {
+  const res = await fetch(endpoints.api.apprenticeship, init);
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary if used to fetch data on server components
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json() as Promise<ScholarshipSummary[]>;
 }
 
-function getScholarshipBySlug(slug: string) {
-  return fetch(`${endpoints.api.apprenticeship}/${slug}`).then(
-    (res) => res.json() as Promise<Scholarship>
-  );
+async function getScholarshipBySlug(slug: string, init?: RequestInit) {
+  const res = await fetch(`${endpoints.api.apprenticeship}/${slug}`, init);
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary if used to fetch data on server components
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json() as Promise<Scholarship>;
 }
 
-export const Apprenticeship = {
+export const ScholarshipService = {
   list: listScholarships,
   get: getScholarshipBySlug,
 };
