@@ -1,0 +1,43 @@
+// Mini reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+// Theme
+:root {
+  --color-background: #FFFFFF;
+  --color-foreground-text: #535353;
+  --color-primary: #685DC5;
+  --color-border: #DADADA;
+
+  --app-max-width: 1440px;
+  --border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  color: var(--color-foreground-text);
+  background-color: var(--color-background);
+}
+
+.main-container {
+  max-width: var(--app-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.primary-color {
+  color: var(--color-primary);
+}
