@@ -2,19 +2,21 @@ import { Button } from "../Button";
 import ssheet from "./ScholarshipDescription.module.scss";
 
 type Props = {
-  label: string;
+  label?: string;
   description: string;
   position?: string;
+  applyBtn?: boolean;
 };
 
 export const ScholarshipDescription = ({
   label,
   description,
   position,
+  applyBtn,
 }: Props) => {
   return (
     <div className={ssheet.container}>
-      <p className={ssheet.label}>{label}</p>
+      {label && <p className={ssheet.label}>{label}</p>}
       <p className={ssheet.desc}>{description}</p>
       {position && (
         <p className={ssheet.pos}>
@@ -22,9 +24,7 @@ export const ScholarshipDescription = ({
           {position}
         </p>
       )}
-      <Button>
-        Apply Now
-      </Button>
+      {applyBtn && <Button>Apply Now</Button>}
     </div>
   );
 };

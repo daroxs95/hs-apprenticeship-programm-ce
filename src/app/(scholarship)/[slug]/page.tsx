@@ -4,6 +4,7 @@ import { Scholarship } from "@/modules/scholarships/domain/types";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { ApplicationSummary } from "@/modules/scholarships/application/components/ApplicationSummary";
+import { ApplicationAbout } from "@/modules/scholarships/application/components/ApplicationAbout";
 
 export async function generateStaticParams() {
   const posts = await ScholarshipService.list();
@@ -83,6 +84,13 @@ export default async function ScholarshipPage({ params }: Props) {
               : undefined,
             location: scholarship.scholarship.location.name,
           }}
+        />
+      </section>
+      <section>
+        <ApplicationAbout
+          about={scholarship.scholarship.about?.[0].data}
+          title="About the apprenticeship"
+          imageUrl={scholarship.scholarship.program.photos?.[0].src}
         />
       </section>
     </main>

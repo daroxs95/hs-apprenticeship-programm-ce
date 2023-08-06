@@ -1,0 +1,84 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  position: relative;
+  
+  .tablet{
+    position: relative;
+    display: none;
+    grid-column-gap: 80px;
+    padding: 130px 160px;
+    grid-template-columns: 1fr 1fr;
+    @include baseBreakpoint{
+      display: grid;
+    }
+
+    .col1 {
+      display: flex;
+      flex-direction: column;
+      gap: var(--app-m-space);
+    }
+
+    .col2 {
+      display: flex;
+      flex-direction: column;
+      gap: var(--app-s-space);
+    }
+  }
+  
+  .mobile {
+    padding: var(--app-m-space) 21px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-s-space);
+
+    @include baseBreakpoint{
+      display: none;
+      gap: 24px;
+    }
+  }
+
+  .imageContainer {
+    background-image: url("/Background.svg");
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    border: solid 1px #e6e6e6;
+    @include baseBreakpoint{
+      width: 420px;
+      height: 420px;
+    }
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image {
+      width: 250px;
+      height: 250px;
+      @include baseBreakpoint{
+        width: 380px;
+        height: 380px;
+      }
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 10;
+    }
+  }
+}
+
+.coloredBg {
+  position: absolute;
+  height: 400px;
+  width: 100vw;
+  top: 195px;
+  right: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  z-index: -1;
+  @include baseBreakpoint{
+    display: none;
+  }
+}
