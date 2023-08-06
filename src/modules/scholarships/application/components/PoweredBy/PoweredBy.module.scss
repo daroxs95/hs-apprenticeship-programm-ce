@@ -1,0 +1,50 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  @include baseBreakpoint{
+    align-items: center;
+    flex-direction: row;
+    gap: 41px;
+  }
+}
+
+.logoContainer {
+  height: 80px;
+  width: 80px;
+  position: relative;
+  .logo {
+    height: 62px;
+    object-fit: contain;
+    aspect-ratio: 1;
+  }
+}
+
+.textContainer {
+  display: flex;
+  gap: 5px;
+
+  @include baseBreakpoint{
+    flex-direction: column;
+  }
+
+  .label {
+    font-size: 14px;
+    font-weight: 300;
+    @include baseBreakpoint{
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+    @include baseBreakpoint{
+      font-size: 27px;
+      font-weight: 300;
+      line-height: 24px;
+    }
+  }
+}

@@ -6,22 +6,32 @@ import localFont from "next/font/local";
 const myFont = localFont({
   src: [
     {
-      path: "../fonts/apercu/apercu_regular_pro.otf",
+      path: "../assets/fonts/apercu/ApercuPro-ExtraLight.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/apercu/ApercuPro-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/apercu/ApercuPro-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/apercu/apercu_regular_italic_pro.otf",
+      path: "../assets/fonts/apercu/ApercuPro-MediumItalic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../fonts/apercu/apercu_bold_pro.otf",
+      path: "../assets/fonts/apercu/ApercuPro-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../fonts/apercu/apercu_bold_italic_pro.otf",
+      path: "../assets/fonts/apercu/ApercuPro-BoldItalic.ttf",
       weight: "700",
       style: "italic",
     },
@@ -37,9 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
-        {children}
-        </body>
+      <body className={myFont.className}>{children}</body>
     </html>
   );
 }

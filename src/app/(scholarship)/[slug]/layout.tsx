@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Navbar } from "@/modules/scholarships/application/components/Navbar";
 import { ScholarshipService } from "@/modules/scholarships/infrastructure/service";
-import { notFound } from "next/navigation";
 import { Scholarship } from "@/modules/scholarships/domain/types";
 
 export const metadata: Metadata = {
@@ -29,11 +28,14 @@ export default async function DetailLayout({
   params: { slug: string };
 }) {
   const { scholarship } = await getData(params.slug);
-  if (!scholarship) notFound();
 
   return (
     <>
-      <Navbar title="Harbour.space" subtitle={scholarship.scholarship.program.name} />
+      <Navbar
+        title="Harbour.space"
+        subtitle={scholarship?.scholarship?.program?.name}
+        applyButton
+      />
       {children}
     </>
   );

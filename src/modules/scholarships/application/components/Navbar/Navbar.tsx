@@ -5,8 +5,9 @@ import { Burger } from "../Burger";
 type Props = {
   title?: string;
   subtitle?: string;
+  applyButton?: boolean;
 };
-export const Navbar = ({ title, subtitle }: Props) => {
+export const Navbar = ({ title, subtitle, applyButton }: Props) => {
   return (
     <nav className={ssheet.navbar}>
       <div className={ssheet.navbarContent}>
@@ -15,9 +16,11 @@ export const Navbar = ({ title, subtitle }: Props) => {
           <span className={ssheet.subtitle}>/{subtitle}</span>
         </h2>
         <div className={ssheet.right}>
-          <button style={{ cursor: "pointer" }} className={ssheet.applyBtn}>
-            <p style={{ position: "relative", zIndex: 10 }}>Apply now</p>
-          </button>
+          {applyButton && (
+            <button style={{ cursor: "pointer" }} className={ssheet.applyBtn}>
+              <p style={{ position: "relative", zIndex: 10 }}>Apply now</p>
+            </button>
+          )}
           <Burger style={{ cursor: "pointer" }} />
         </div>
       </div>

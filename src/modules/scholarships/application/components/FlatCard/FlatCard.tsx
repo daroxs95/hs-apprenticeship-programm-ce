@@ -1,4 +1,4 @@
-import { ReactNode, CSSProperties, AllHTMLAttributes } from "react";
+import { AllHTMLAttributes } from "react";
 import ssheet from "./FlatCard.module.scss";
 
 type Props = AllHTMLAttributes<HTMLDivElement>;

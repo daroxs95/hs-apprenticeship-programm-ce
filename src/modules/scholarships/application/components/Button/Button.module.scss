@@ -1,0 +1,21 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  border: none;
+  border-radius: 100px;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 14px var(--app-m-space);
+  width: fit-content;
+  font-size: 16px;
+  transition: background-color 200ms ease 0s, opacity 200ms ease 0s;
+  cursor: pointer;
+
+  @include baseBreakpoint{
+    font-size: 18px;
+    padding: var(--app-s-space) var(--app-m-space);
+  }
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+}
