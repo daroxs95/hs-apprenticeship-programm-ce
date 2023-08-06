@@ -1,25 +1,18 @@
-// Mini reset
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  color: initial;
-  text-decoration: none;
-}
+@import "../styles/reset.scss";
+@import "../styles/mixins.scss";
 
 // Theme
 :root {
   --color-background: #FFFFFF;
   --color-foreground-text: #535353;
   --color-primary: #685DC5;
+  --color-support: #60a269;
   --color-border: #DADADA;
 
   --app-max-width: 1440px;
   --border-radius: 3px;
+  --app-s-space: 18px;
+  --app-m-space: 40px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,4 +33,11 @@ body {
 
 .primary-color {
   color: var(--color-primary);
+}
+
+.keep-navbar-space {
+  margin-top: 65px;
+  @include tablet {
+    margin-top: 130px;
+  }
 }

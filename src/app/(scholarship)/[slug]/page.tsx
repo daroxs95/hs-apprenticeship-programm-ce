@@ -31,7 +31,7 @@ export default async function ScholarshipPage({
   if (!scholarship) notFound();
 
   return (
-    <main className="main-container">
+    <main className="main-container keep-navbar-space">
       <h1 className="primary-color">{scholarship.scholarship.name}</h1>
     </main>
   );
