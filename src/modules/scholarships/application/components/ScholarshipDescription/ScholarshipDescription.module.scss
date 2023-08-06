@@ -1,0 +1,42 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 14px;
+  gap: var(--app-s-space);
+  
+  @include baseBreakpoint{
+    gap: var(--app-m-space);
+    padding: 0px 0;
+  }
+}
+
+.label {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.33px;
+  @include baseBreakpoint{
+    font-size: 22px;
+  }
+}
+
+.desc {
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: -0.33px;
+  @include baseBreakpoint{
+    font-size: 22px;
+  }
+}
+
+.pos {
+  .posLabel {
+    font-weight: 700;
+  }
+  font-size: 18px;
+  letter-spacing: -0.33px;
+  @include baseBreakpoint{
+    font-size: 22px;
+  }
+}

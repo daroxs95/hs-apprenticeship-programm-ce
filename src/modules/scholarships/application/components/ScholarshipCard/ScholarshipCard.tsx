@@ -21,7 +21,7 @@ export const ScholarshipCard = ({
   return (
     <Link
       href={endpoints.resolvers.getScholarshipDetail(slug)}
-      style={{ maxWidth: "380px", width: "100%", height: "100%" }}
+      style={{ maxWidth: "350px", width: "100%", height: "100%" }}
       className={ssheet.container}
     >
       <FlatCard style={{ padding: "16px 26px" }}>

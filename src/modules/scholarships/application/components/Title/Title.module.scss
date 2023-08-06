@@ -1,0 +1,41 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  @include baseBreakpoint{
+    align-items: center;
+    flex-direction: row;
+    gap: 41px;
+  }
+}
+
+.logoContainer {
+  height: 150px;
+  width: 150px;
+  right: 0px;
+  top:-80px;
+  position: absolute;
+  transform: rotateZ(20deg);
+  z-index: -1;
+  .logo {
+    height: 62px;
+    object-fit: contain;
+    aspect-ratio: 1;
+    filter: brightness(0) saturate(100%) invert(65%) sepia(92%) saturate(6%) hue-rotate(124deg) brightness(103%) contrast(100%);
+  }
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+  color: var(--color-primary);
+  @include baseBreakpoint{
+    font-size: 48px;
+    line-height: 56px;
+  }
+}

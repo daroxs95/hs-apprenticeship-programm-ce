@@ -1,0 +1,10 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 17px 14px;
+  @include baseBreakpoint{
+    padding: var(--app-m-space);
+  }
+}

@@ -6,11 +6,12 @@
   --color-background: #FFFFFF;
   --color-foreground-text: #535353;
   --color-primary: #685DC5;
+  --color-primary-dark: #3b1f81;
   --color-support: #60a269;
   --color-border: #DADADA;
 
   --app-max-width: 1440px;
-  --border-radius: 3px;
+  --border-radius: 5px;
   --app-s-space: 18px;
   --app-m-space: 40px;
 }
@@ -37,7 +38,14 @@ body {
 
 .keep-navbar-space {
   margin-top: 65px;
-  @include tablet {
+  @include baseBreakpoint{
     margin-top: 130px;
+  }
+}
+
+.default-padding {
+  padding: 0px 21px;
+  @include baseBreakpoint{
+    padding: 0px 160px;
   }
 }

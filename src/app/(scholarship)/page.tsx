@@ -18,7 +18,7 @@ export default async function Home() {
   const { scholarships } = await getData();
 
   return (
-    <main className="main-container keep-navbar-space">
+    <main className="main-container keep-navbar-space default-padding">
       <h1 className="primary-color">Scholarships Programme</h1>
       <Stack
         wrap

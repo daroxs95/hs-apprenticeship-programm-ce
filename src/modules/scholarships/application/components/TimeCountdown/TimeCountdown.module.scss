@@ -1,0 +1,35 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  .time {
+    font-size: 16px;
+  }
+}
+
+.cardContainer{
+  border-width: 1px;
+  border-color: var(--color-border);
+  border-style: solid;
+  border-radius: var(--border-radius);
+  padding: 17px 14px;
+  @include baseBreakpoint{
+    padding: 17px 40px;
+  }
+  .label {
+    color: var(--color-primary)
+  }
+  .time {
+    font-size: 20px;
+    @include baseBreakpoint{
+      font-size: 27px;
+    }
+  }
+}
+
+.label {
+  font-weight: 700;
+}
+
+.time {
+  font-weight: 300;
+}

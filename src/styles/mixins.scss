@@ -1,9 +1,13 @@
 @mixin laptop() {
-   @media only screen and (min-width: 1224px) { @content ; }
+   @media only screen and (min-width: 1024px) { @content ; }
 }
 
 @mixin tablet() {
    @media only screen and (min-width: 768px) { @content ; }
+}
+
+@mixin baseBreakpoint() {
+   @media only screen and (min-width: 1024px) { @content ; }
 }
 
 @mixin hoverableShadow() {
