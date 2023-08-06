@@ -70,6 +70,7 @@ export const ApplicationSummary = ({
           label="A fully funded work-study program to launch your tech career"
           description={application.description}
           position={application.position}
+          applyBtn
         />
       </div>
 
@@ -80,6 +81,7 @@ export const ApplicationSummary = ({
             label="A fully funded work-study program to launch your tech career"
             description={application.description}
             position={application.position}
+            applyBtn
           />
         </div>
         <div className={ssheet.col2}>
