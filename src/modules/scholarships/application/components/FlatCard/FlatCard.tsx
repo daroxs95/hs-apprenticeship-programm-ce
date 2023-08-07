@@ -5,7 +5,7 @@ type Props = AllHTMLAttributes<HTMLDivElement>;
 
 export const FlatCard = ({ children, className, ...rest }: Props) => {
   return (
-    <div className={`${ssheet["flat-card"]} ${className}`} {...rest}>
+    <div className={`${ssheet["flat-card"]} ${className || ""}`} {...rest}>
       {children}
     </div>
   );

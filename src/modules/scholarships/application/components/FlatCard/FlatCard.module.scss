@@ -6,8 +6,8 @@
   border-style: solid;
   border-radius: var(--border-radius);
   background-color: var(--color-background);
-  padding: 17px 14px;
+  padding: var(--app-s-space) 14px;
   @include baseBreakpoint{
-    padding: var(--app-m-space);
+    padding: var(--app-s-space) var(--app-m-space);
   } 
 }
