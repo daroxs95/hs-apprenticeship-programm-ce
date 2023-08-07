@@ -41,7 +41,7 @@ const titledDataSchema = z.object({
   data: z.string(),
 });
 
-const faqSchema = z.object({
+export const faqSchema = z.object({
   type: z.string(),
   question: z.string(),
   answer: z.array(optDataDescriptionSchema),

@@ -1,0 +1,33 @@
+@import "../../../../../styles/mixins.scss";
+@import "../../../../../styles/animations.scss";
+
+.accHeader {
+  user-select: none;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 32px;
+
+  .moreBtn{
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    @include baseBreakpoint{
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.accBody {
+  max-width: 900px;
+  max-height: 1000px;
+
+  transition-property: max-height;
+  transition-duration: 0.5s;
+  transition-timing-function: $custom-easing;
+  overflow: hidden;
+}
+
+.hidden {
+  max-height: 0;
+}

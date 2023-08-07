@@ -1,0 +1,21 @@
+@keyframes rotate {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+
+ @keyframes dash {
+   0% {
+     stroke-dasharray: 1, 200;
+     stroke-dashoffset: 0;
+   }
+   100% {
+      stroke-dasharray: 180, 200;
+      stroke-dashoffset: 0;
+   }
+ }
+
+ $custom-easing: cubic-bezier(1.00, -0.100, 0.00, 1.20);

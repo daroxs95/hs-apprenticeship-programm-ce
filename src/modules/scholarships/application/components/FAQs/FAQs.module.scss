@@ -1,0 +1,86 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-s-space);
+  padding: var(--app-m-space) 21px;
+  @include baseBreakpoint{
+    gap: 0;
+    padding: 0px var(--app-b-space) var(--app-m-space) var(--app-b-space);
+  }
+
+  .controls {
+    padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--app-s-space);
+
+    @include baseBreakpoint{
+      flex-wrap: nowrap;
+    }
+  }
+
+  .faqAnswer{
+    font-size: 18px;
+    letter-spacing: -0.33px;
+    font-weight: 300;
+    @include baseBreakpoint{
+      font-size: 22px;
+      padding: var(--app-m-space);
+      padding-top: 0;
+    }
+  }
+
+  .faqQuestion{
+    font-size: 18px;
+    letter-spacing: -0.33px;
+    font-weight: 700;
+    padding: var(--app-s-space) 0;
+    @include baseBreakpoint{
+      font-size: 22px;
+      padding: var(--app-m-space);
+    }
+  }
+
+  .faqType {
+    font-size: 22px;
+    letter-spacing: -0.33px;
+    font-weight: 700;
+    color: var(--color-primary);
+    padding: var(--app-m-space) 0;
+    display: none;
+    @include baseBreakpoint{
+      display: block;
+    }
+  }
+
+  .faqGroup {
+    display: grid;
+    @include baseBreakpoint{
+      grid-template-columns: 300px 1fr 50px;
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  align-items: start;
+  gap: var(--app-s-space);
+  flex-direction: column;
+  width: 100%;
+
+  @include baseBreakpoint{
+    width: auto;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .filterLabel{
+    font-weight: 300;
+    font-size: 16px;
+    text-align: right;
+  }
+}
