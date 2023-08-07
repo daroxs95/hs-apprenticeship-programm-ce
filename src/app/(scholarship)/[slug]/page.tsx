@@ -50,7 +50,10 @@ export default async function ScholarshipPage({ params }: Props) {
   if (!scholarship) notFound();
 
   return (
-    <main className="main-container keep-navbar-space">
+    <main
+      className="main-container keep-navbar-space"
+      style={{ marginBottom: "160px" }}
+    >
       <section>
         <ApplicationSummary
           poweredBy={{

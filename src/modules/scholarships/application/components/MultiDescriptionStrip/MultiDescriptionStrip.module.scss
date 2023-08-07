@@ -1,0 +1,12 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  gap: var(--app-m-space);
+  padding: var(--app-s-space) var(--app-m-space);
+  background-color: var(--color-background);
+
+  .label {
+    color: var(--color-foreground-text);
+  }
+}

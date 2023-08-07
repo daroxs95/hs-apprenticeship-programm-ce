@@ -1,6 +1,7 @@
 import { ReactNode, CSSProperties } from "react";
 import ssheet from "./Navbar.module.scss";
 import { Burger } from "../Burger";
+import Link from "next/link";
 
 type Props = {
   title?: string;
@@ -12,7 +13,9 @@ export const Navbar = ({ title, subtitle, applyButton }: Props) => {
     <nav className={ssheet.navbar}>
       <div className={ssheet.navbarContent}>
         <h2 className={ssheet.titleContainer}>
-          <span className={ssheet.title}>{title}</span>
+          <Link href={"/"}>
+            <span className={ssheet.title}>{title}</span>
+          </Link>
           <span className={ssheet.subtitle}>/{subtitle}</span>
         </h2>
         <div className={ssheet.right}>
