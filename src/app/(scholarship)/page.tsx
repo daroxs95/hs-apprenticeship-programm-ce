@@ -19,14 +19,16 @@ export default async function Home() {
 
   return (
     <main className="main-container keep-navbar-space default-padding">
-      <h1 className="primary-color">Scholarships Programme</h1>
-      <Stack
-        wrap
-        orientation="horizontal"
-        style={{ margin: "auto", justifyContent: "center" }}
+      <h1
+        className="primary-color"
+        style={{ margin: "var(--app-s-space) var(--app-s-space)" }}
       >
+        Scholarships Programme
+      </h1>
+      <Stack grid>
         {scholarships.map((s) => (
           <ScholarshipCard
+            style={{ height: "100%" }}
             slug={s.slug}
             key={s.id}
             applicationEndDate={new Date(s.application_end_date)}

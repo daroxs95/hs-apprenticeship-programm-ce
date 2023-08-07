@@ -10,6 +10,12 @@ yarn dev
 pnpm dev
 ```
 
+## Web App
+The app results in a static site, all pages are generated on build time and most of the components are pure server components, so the app can be deployed on any static site hosting service, changing this to use ISR or any other approach for server rendered pages should be straightforward.
+## Tests
+Unit tests can be run by using `yarn test`:
+- Exist a test suite to check API endpoints responses correctness.
+
 ## NOTES
 
 - ⚠️ The `faqSchema` of scholarships module is less restrictive as it should be to make the tests pass using the current API, as in it exists invalid(or al least not common) data, for example: are faqs answers that contains no `data` field
