@@ -40,7 +40,11 @@
   align-items: flex-start;
   line-height: 18px;
   .title {
+    color: var(--color-background);
     font-size: 18px;
+    line-height: 18px;
+    align-items: flex-start;
+    display: flex;
   }
   
   .subtitle {

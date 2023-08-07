@@ -5,6 +5,9 @@ import { Title } from "../Title";
 import { TimeCountdown } from "../TimeCountdown";
 import { ScholarshipDescription } from "../ScholarshipDescription";
 import { MultiDescriptionCard } from "../MultiDescriptionCard";
+import { StickyBar } from "../StickyBar";
+import { LabeledDescription } from "../LabeledDescription";
+import { MultiDescriptionStrip } from "../MultiDescriptionStrip";
 
 type Props = {
   children?: ReactNode | ReactNode[];
@@ -33,6 +36,24 @@ export const ApplicationSummary = ({
   title,
   application,
 }: Props) => {
+  const multiDescriptionCardFields = [
+    { label: "Location", desc: application.location || "" },
+    {
+      label: "Duration",
+      desc: application.duration
+        ? `${Number((application.duration / 12).toFixed(2))} Year/s`
+        : "",
+    },
+    {
+      label: "Start date",
+      desc: application.startDate ? application.startDate.toDateString() : "",
+    },
+    {
+      label: "End date",
+      desc: application.endDate ? application.endDate.toDateString() : "",
+    },
+  ];
+
   return (
     <div className={ssheet.container}>
       <div className={ssheet.mobile}>
@@ -43,29 +64,7 @@ export const ApplicationSummary = ({
           label="Application closses in"
           date={application.closeDate}
         />
-        <MultiDescriptionCard
-          fields={[
-            { label: "Location", desc: application.location || "" },
-            {
-              label: "Duration",
-              desc: application.duration
-                ? `${Number((application.duration / 12).toFixed(2))} Year/s`
-                : "",
-            },
-            {
-              label: "Start date",
-              desc: application.startDate
-                ? application.startDate.toDateString()
-                : "",
-            },
-            {
-              label: "End date",
-              desc: application.endDate
-                ? application.endDate.toDateString()
-                : "",
-            },
-          ]}
-        />
+        <MultiDescriptionCard fields={multiDescriptionCardFields} />
         <ScholarshipDescription
           label="A fully funded work-study program to launch your tech career"
           description={application.description}
@@ -91,29 +90,20 @@ export const ApplicationSummary = ({
             label="Application closses in"
             date={application.closeDate}
           />
-          <MultiDescriptionCard
-            fields={[
-              { label: "Location", desc: application.location || "" },
-              {
-                label: "Duration",
-                desc: application.duration
-                  ? `${Number((application.duration / 12).toFixed(2))} Year/s`
-                  : "",
-              },
-              {
-                label: "Start date",
-                desc: application.startDate
-                  ? application.startDate.toDateString()
-                  : "",
-              },
-              {
-                label: "End date",
-                desc: application.endDate
-                  ? application.endDate.toDateString()
-                  : "",
-              },
-            ]}
-          />
+          <MultiDescriptionCard fields={multiDescriptionCardFields} />
+          <StickyBar>
+            <MultiDescriptionStrip
+              fields={[
+                { label: poweredBy.name, desc: application.position || "" },
+                ...multiDescriptionCardFields,
+              ]}
+            >
+              <TimeCountdown
+                label="Application closses in"
+                date={application.closeDate}
+              />
+            </MultiDescriptionStrip>
+          </StickyBar>
         </div>
         <div className={ssheet.bgDetail} />
       </div>
