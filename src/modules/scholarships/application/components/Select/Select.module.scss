@@ -1,0 +1,49 @@
+@import "../../../../../styles/mixins.scss";
+
+.container {
+  border-radius: 100px;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: 16px;
+  transition: border-color 200ms ease 0s, opacity 200ms ease 0s;
+  cursor: pointer;
+  width: max-content;
+  padding-right: var(--app-s-space);
+  width: 100%;
+  @include baseBreakpoint{
+    width: fit-content;
+  }
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  select {
+    border: none;
+    border-radius: 100px;
+    background-color: transparent;
+    color: var(--color-primary);
+    padding: 14px;
+    width: fit-content;
+    font-size: 16px;
+    width: 100%;
+    @include baseBreakpoint{
+      width: fit-content;
+    }
+
+    &:focus,
+    &.noEmpty {
+      outline: none;
+    }
+  
+    @include baseBreakpoint{
+      font-size: 18px;
+      padding: var(--app-s-space);
+    }
+    &:hover {
+      border-color: var(--color-primary);
+    }
+
+  }
+}

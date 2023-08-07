@@ -1,0 +1,95 @@
+@import "../../../../../styles/mixins.scss";
+@import "../../../../../styles/animations.scss";
+
+.moreButton {
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: var(--color-background);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-primary);
+
+  transition-property: transform border-color;
+  transition-duration: 0.5s;
+  transition-timing-function: $custom-easing;
+
+  .moreButtonIcon{
+    z-index: 100;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primary);
+    font-size: 18px;
+    line-height: 18px;
+
+    transition-property: color;
+    transition-duration: 0.5s;
+    transition-timing-function: $custom-easing;
+  }
+
+  .circular {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &:before {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--color-background);
+    transform: scale(1);
+
+    transition-property: transform border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: $custom-easing;
+  }
+
+  &.open {
+    border-color: var(--color-primary);
+    color: var(--color-border);
+    &:hover {
+      .path {
+        stroke: var(--color-background);
+      }
+    }
+    &:before {
+      transform: scale(0);
+    }
+
+    .moreButtonIcon{
+      animation: rotate 0.2s $custom-easing backwards;
+      color: var(--color-background);
+      margin-bottom: 3px;
+      @include baseBreakpoint {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &:hover {
+    .moreButtonIcon{
+      animation: rotate 0.2s $custom-easing forwards;
+    }
+
+    .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 0.5s $custom-easing forwards;
+      stroke-linecap: round;
+      stroke: var(--color-primary);
+    }
+  }
+
+}
+

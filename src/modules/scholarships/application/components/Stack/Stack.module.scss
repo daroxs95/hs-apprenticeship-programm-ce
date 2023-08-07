@@ -1,5 +1,19 @@
+@import "../../../../../styles/mixins.scss";
+
 .stack {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.grid {
+  grid-column-gap: var(--app-m-space);
+  grid-row-gap: var(--app-s-space);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: var(--app-s-space);
+  @include baseBreakpoint{
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: var(--app-s-space);
+  }
 }

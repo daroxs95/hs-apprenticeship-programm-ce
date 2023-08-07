@@ -8,7 +8,7 @@
   padding: var(--app-m-space) 21px;
   @include baseBreakpoint{
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0px 160px;
+    padding: 0px var(--app-b-space) var(--app-m-space) var(--app-b-space);
   }
 
   .col1 {

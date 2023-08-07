@@ -7,7 +7,7 @@
     position: relative;
     display: none;
     grid-column-gap: 80px;
-    padding: 130px 160px 100px 160px;
+    padding: 130px var(--app-b-space) 100px var(--app-b-space);
     grid-template-columns: 1fr 1fr;
     @include baseBreakpoint{
       display: grid;

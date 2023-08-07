@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { ApplicationSummary } from "@/modules/scholarships/application/components/ApplicationSummary";
 import { ApplicationAbout } from "@/modules/scholarships/application/components/ApplicationAbout";
 import { ApplicationSpecs } from "@/modules/scholarships/application/components/ApplicationSpecs";
+import { FAQs } from "@/modules/scholarships/application/components/FAQs";
 
 export async function generateStaticParams() {
   const posts = await ScholarshipService.list();
@@ -118,6 +119,12 @@ export default async function ScholarshipPage({ params }: Props) {
             monthly: scholarship.scholarship.stipend_per_month,
             yearly: scholarship.scholarship.stipend_per_year,
           }}
+        />
+      </section>
+      <section>
+        <FAQs
+          faqs={scholarship.scholarship.faqs.items || []}
+          categories={scholarship.scholarship.faqs.categories || []}
         />
       </section>
     </main>
