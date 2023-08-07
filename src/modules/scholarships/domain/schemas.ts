@@ -210,6 +210,40 @@ const scholarshipDataSchema = z.object({
   mentors: z.array(z.any()),
 });
 
+export const testimonialSchema = z.object({
+  id: z.number(),
+  scope: z.string(),
+  name: z.string(),
+  profile_picture: z.object({
+    rawFile: z.object({ preview: z.string() }),
+    src: z.string(),
+    title: z.string(),
+  }),
+  small_picture: z.object({
+    rawFile: z.object({ preview: z.string() }),
+    src: z.string(),
+    title: z.string(),
+  }),
+  program_link: z.string(),
+  program_name: z.string(),
+  company_logo: z.string(),
+  company_name: z.optional(z.string()),
+  current_position: z.string(),
+  text: z.string(),
+  education: z.optional(z.string()),
+  country: z.object({
+    id: z.number(),
+    scope: z.string(),
+    country_code: z.string(),
+    country_name: z.string(),
+    country_flag: z.object({
+      rawFile: z.object({ preview: z.string() }),
+      src: z.string(),
+      title: z.string(),
+    }),
+  }),
+});
+
 export const scholarshipSchema = z.object({
   id: z.number(),
   scope: z.string(),
@@ -218,5 +252,5 @@ export const scholarshipSchema = z.object({
   scholarship: scholarshipDataSchema,
   meta: metaSchema,
   og_meta: ogMetaSchema,
-  testimonials: z.array(z.any()),
+  testimonials: z.optional(z.array(testimonialSchema)),
 });

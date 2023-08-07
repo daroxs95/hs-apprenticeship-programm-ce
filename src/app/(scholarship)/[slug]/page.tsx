@@ -7,6 +7,7 @@ import { ApplicationSummary } from "@/modules/scholarships/application/component
 import { ApplicationAbout } from "@/modules/scholarships/application/components/ApplicationAbout";
 import { ApplicationSpecs } from "@/modules/scholarships/application/components/ApplicationSpecs";
 import { FAQs } from "@/modules/scholarships/application/components/FAQs";
+import { ApplicationTestimonials } from "@/modules/scholarships/application/components/ApplicationTestimonials";
 
 export async function generateStaticParams() {
   const posts = await ScholarshipService.list();
@@ -50,11 +51,8 @@ export default async function ScholarshipPage({ params }: Props) {
   if (!scholarship) notFound();
 
   return (
-    <main
-      className="main-container keep-navbar-space"
-      style={{ marginBottom: "160px" }}
-    >
-      <section>
+    <main className="keep-navbar-space" style={{ marginBottom: "160px" }}>
+      <section className="main-container">
         <ApplicationSummary
           poweredBy={{
             name: scholarship.scholarship.company.name,
@@ -91,14 +89,14 @@ export default async function ScholarshipPage({ params }: Props) {
           }}
         />
       </section>
-      <section>
+      <section className="main-container">
         <ApplicationAbout
           about={scholarship.scholarship.about?.[0].data}
           title="About the apprenticeship"
           imageUrl={scholarship.scholarship.program.photos?.[0].src}
         />
       </section>
-      <section>
+      <section className="main-container">
         <ApplicationSpecs
           study={{
             hours: scholarship.scholarship.study_commitment,
@@ -125,6 +123,11 @@ export default async function ScholarshipPage({ params }: Props) {
         />
       </section>
       <section>
+        {scholarship.testimonials?.length ? (
+          <ApplicationTestimonials testimonials={scholarship.testimonials} />
+        ) : null}
+      </section>
+      <section className="main-container">
         <FAQs
           faqs={scholarship.scholarship.faqs.items || []}
           categories={scholarship.scholarship.faqs.categories || []}
