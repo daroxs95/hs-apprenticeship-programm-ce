@@ -1,0 +1,49 @@
+@import "../../../../../styles/mixins.scss";
+@import "../../../../../styles/animations.scss";
+
+.container {
+  position: relative;
+  margin-top: 200px;
+  
+  .bgDetail {
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-style: solid;
+    border-radius: var(--border-radius);
+    background-image: url("/Background.svg");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 385px;
+    z-index: -10;
+    right: 0;
+    left: 0;
+    top: -100px;
+    @include baseBreakpoint{
+      background-image: url("/BackgroundB.svg");
+    }
+  }
+
+  .swiperSlide {
+    width: 335px;
+    @include baseBreakpoint{
+      width: 850px;
+    }
+  }
+}
+
+.hiddenFollowBtn{
+  transform: scale3d(0, 0.5, 1);
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+}
+
+.followBtn{
+  transform: scale3d(1, 1, 1);
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: $custom-easing;
+}

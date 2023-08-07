@@ -6,6 +6,7 @@ type Props = {
   orientation?: "vertical" | "horizontal";
   wrap?: boolean;
   grid?: boolean;
+  className?: string;
   style?: CSSProperties;
 };
 export const Stack = ({
@@ -14,10 +15,11 @@ export const Stack = ({
   style,
   wrap,
   grid,
+  className,
 }: Props) => {
   return (
     <div
-      className={grid ? ssheet.grid : ssheet.stack}
+      className={`${grid ? ssheet.grid : ssheet.stack} ${className || ""}`}
       style={
         grid
           ? style

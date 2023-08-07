@@ -25,8 +25,8 @@ export const MoreButton = ({ className, isOpen, ...rest }: Props) => {
           cy="50"
           r="23"
           fill="none"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
       </svg>
     </button>

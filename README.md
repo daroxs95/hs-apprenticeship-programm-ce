@@ -22,3 +22,5 @@ Unit tests can be run by using `yarn test`:
 - `Burger` component has hardcoded dimensions, but can be easily extended
 - Next images are unoptimized because the app is exporting to static site.
 - For the applications end date all the years are fixed to 2024 to be able to correctly visualize the design
+- The testimonials section doesn't render on every scholarship, the data from API is incomplete
+- Some data ishardcoded due to missing data from API
